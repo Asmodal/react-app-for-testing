@@ -12,13 +12,19 @@ const inputs = [
 
 const useStyles = makeStyles(()=>({
     root: {
-        padding: '24px'
+        padding: '24px',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center'
     },
     field: {
-        width: '100%'
+        width: '100%',
+        maxWidth: '800px',
     },
     submit: {
         width: '100%',
+        maxWidth: '800px',
         marginTop: '10px'
     }
 }))

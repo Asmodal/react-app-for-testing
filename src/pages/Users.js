@@ -49,7 +49,7 @@ const Users = () => {
       </Typography>
       <Grid container component="ul" classes={{ root: classes.list }}>
         {storedValue.map(user => (
-          <Grid item xs={12} lg={6} component="li" classes={{ root: classes.listItem }}>
+          <Grid item xs={12} component="li" classes={{ root: classes.listItem }}>
             <Box classes={{ root: classes.surface }} boxShadow={2} key={user.id}>
               {Object.keys(user).map(key => (<Box classes={{ root: classes.label }}>
                 {user[key]}
