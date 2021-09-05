@@ -9,6 +9,7 @@ describe('UserAdd', () => {
             cy.findAllByRole('textbox').eq(i).type("123")
           }
           cy.get('form > button').should('be.disabled')
+    })
    // it('Compares snapshot', () => {
    //     cy.get('form.form').matchImageSnapshot();
    // })
