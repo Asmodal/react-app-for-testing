@@ -1,8 +1,5 @@
 /* eslint-disable no-undef */
 /// <reference types="cypress" />
-
-import { forEach } from "lodash";
-
 describe('UserAdd', () => {
     beforeEach(() => {
         cy.visit('localhost:3000');
