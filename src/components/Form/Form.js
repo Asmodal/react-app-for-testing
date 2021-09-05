@@ -23,7 +23,7 @@ const useStyles = makeStyles(() => ({
     }
 }))
 
-const Form = ({ title }) => {
+const Form = ({ title, onSubmit }) => {
     const classes = useStyles()
     const [name, setName] = useState('');
     const [surname, setSurname] = useState('')
@@ -74,6 +74,9 @@ const Form = ({ title }) => {
     }
     const handleSubmit = (e) => {
         e.preventDefault();
+        if (typeof onSubmit === 'function') {
+            onSubmit()
+        }
         const id = storedValue[storedValue.length - 1]?.id + 1;
         if (name && surname && !emailError && email) {
             setValue([...storedValue, { id, name, surname, email, address, level, description }])
