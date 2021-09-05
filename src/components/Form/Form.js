@@ -91,7 +91,7 @@ const Form = ({ title }) => {
             <TextField label="level" autoComplete="new-password"type="number" value={level} onChange={e => setLevel(e.target.value)} classes={{ root: classes.field }} />
             <TextField label="description" autoComplete="new-password" value={description} onChange={e => setDescription(e.target.value)} classes={{ root: classes.field }} />
             <br />
-            <Button disabled={!(name && surname && !emailError && email)} type="submit" color="primary" variant="contained" classes={{ root: classes.submit }}>Send Form</Button>
+            <Button disabled={!(name && surname && !emailError && email && !nameError && !surnameError)} type="submit" color="primary" variant="contained" classes={{ root: classes.submit }}>Send Form</Button>
         </Grid>
     )
 }
