@@ -1,6 +1,5 @@
 import React from 'react';
 import { Typography, Box } from '@material-ui/core';
-import AdjustIcon from '@material-ui/icons/Adjust';
 import { makeStyles } from '@material-ui/styles';
 
 const useStyles = makeStyles((theme) => ({
@@ -24,7 +23,7 @@ const Footer = () => {
     return (
         <Box classes={{ root: classes.root }} boxShadow={2}>
             <Typography variant="caption" classes={{ root: classes.text }}>
-                <b>The Testing Page Copyright by RM</b> | Created over three hours with Create React App and Material UI
+                <b>The Testing Page by RM</b> | Created with Create React App and Material UI
             </Typography>
         </Box>
     )
