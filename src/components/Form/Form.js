@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { TextField, Button, Grid } from '@material-ui/core';
+import { TextField, Button, Grid, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 import useLocalStorage from '../../hooks/useLocalStorage';
 import staticUsers from '../../data/staticUsers.js';
@@ -82,7 +82,7 @@ const Form = ({ title }) => {
     }
     return (
         <Grid container component="form" onSubmit={(e) => handleSubmit(e)} className={classes.root}>
-            <span>{title}{' '}</span>
+            <Typography>{title}</Typography>
             <br />
             <TextField required label="name" error={nameError} autoComplete="new-password" value={name} onChange={handleName} classes={{ root: classes.field }} />
             <TextField required label="surname" error={surnameError} autoComplete="new-password" value={surname} onChange={handleSurname} classes={{ root: classes.field }} />
