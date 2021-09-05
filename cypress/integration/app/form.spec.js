@@ -26,4 +26,11 @@ describe('UserAdd', () => {
         cy.get('ul').should('exist')
         cy.get('ul').find('li').should('have.length', 3)
     })
+    it('Brak rejestracji i sprawdzenie wielkości tabeli', () => {
+        
+        cy.get('[href="/users"]').click()
+        cy.get('ul > li').should('have.length', 2)
+        
+    })
+
 })
