@@ -1,9 +1,14 @@
 /* eslint-disable no-undef */
 /// <reference types="cypress" />
-
-describe('Snapshot test', () => {
+describe('UserAdd', () => {
     beforeEach(() => {
         cy.visit('localhost:3000');
+    })
+    it('FalseUserAdd', () => {
+        for (let i = 0; i < 5; i++) {
+            cy.findAllByRole('textbox').eq(i).type("123")
+          }
+          cy.get('form > button').should('be.disabled')
     })
    // it('Compares snapshot', () => {
    //     cy.get('form.form').matchImageSnapshot();
@@ -22,4 +27,3 @@ describe('Snapshot test', () => {
         cy.get('ul').find('li').should('have.length', 3)
     })
 })
-
