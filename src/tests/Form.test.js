@@ -13,6 +13,13 @@ it('renders correct number of fields', () => {
   mount(<Form />);
   cy.get('form label + div').should('have.length', 6)
 });
+it('renders correct fields', () => {
+  mount(<Form />);
+  const labels = ['name', 'surname', 'email', 'address', 'level', 'description']
+  labels.forEach((label, index) => {
+    cy.get('form label').eq(index).contains(label)
+  })
+});
 it('renders a submit button', () => {
   mount(<Form />);
   cy.get('button[type="submit"]').should('exist')
