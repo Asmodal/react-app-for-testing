@@ -29,18 +29,22 @@ const Form = ({ title }) => {
     const [surname, setSurname] = useState('')
     const [email, setEmail] = useState('');
     const [address, setAddress] = useState('')
+    const [level, setLevel] = useState(0)
+    const [description, setDescription] = useState('')
     const [storedValue, setValue] = useLocalStorage("users", staticUsers);
     const clearForm = () => {
         setName('')
         setSurname('')
         setEmail('')
         setAddress('')
+        setLevel(0)
+        setDescription('')
     }
     const handleSubmit = (e) => {
         e.preventDefault();
         const id = storedValue[storedValue.length - 1]?.id + 1;
         if (name && surname) {
-            setValue([...storedValue, { id, name, surname, email, address }])
+            setValue([...storedValue, { id, name, surname, email, address, level, description }])
         }
         clearForm()
     }
@@ -52,6 +56,8 @@ const Form = ({ title }) => {
             <TextField required label="surname" autoComplete="new-password" value={surname} onChange={e => setSurname(e.target.value)} classes={{ root: classes.field }} />
             <TextField label="email" autoComplete="new-password" value={email} onChange={e => setEmail(e.target.value)} classes={{ root: classes.field }} />
             <TextField label="address" autoComplete="new-password" value={address} onChange={e => setAddress(e.target.value)} classes={{ root: classes.field }} />
+            <TextField label="level" autoComplete="new-password"type="number" value={level} onChange={e => setLevel(e.target.value)} classes={{ root: classes.field }} />
+            <TextField label="description" autoComplete="new-password" value={description} onChange={e => setDescription(e.target.value)} classes={{ root: classes.field }} />
             <br />
             <Button disabled={!(name && surname)} type="submit" color="primary" variant="contained" classes={{ root: classes.submit }}>Send Form</Button>
         </Grid>
