@@ -35,3 +35,10 @@ module.exports = (on, config) => {
   // with any changed environment variables
   return config
 }
+
+const injectDevServer = require("@cypress/react/plugins/react-scripts")
+
+module.exports = (on, config) => {
+  injectDevServer(on, config)
+  return config
+}
