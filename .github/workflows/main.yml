@@ -8,6 +8,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: NPM install
+        run: npm install
+
       - name: Run Dev Server
         run: npm start
 
