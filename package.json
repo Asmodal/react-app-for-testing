@@ -18,7 +18,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "cy:open": "cypress open",
-    "cy:component": "cypress open-ct"
+    "cy:component": "cypress open-ct",
+    "test:chrome": "cypress run --browser chrome"
   },
   "devDependencies": {
     "@cypress/code-coverage": "^3.9.10",
