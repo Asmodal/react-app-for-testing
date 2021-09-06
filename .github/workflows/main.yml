@@ -11,9 +11,6 @@ jobs:
       - name: NPM install
         run: npm install
 
-      - name: Run Dev Server
-        run: npm start
-
-      - name: Run Cypress tests
-        run: npm run test:chrome
+      - name: Run Cypress component tests
+        run: npm run cy:component
         continue-on-error: true
