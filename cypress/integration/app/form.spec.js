@@ -15,9 +15,9 @@ describe('UserAdd', () => {
           }
           cy.get('form > button').should('be.disabled')
     })
-   it('Compares snapshot', () => {
-       cy.get('form.MuiGrid-container').matchImageSnapshot();
-   })
+//    it('Compares snapshot', () => {
+//        cy.get('form.MuiGrid-container').matchImageSnapshot();
+//    })
     it ('Test integracyjny', ()=> {
         cy.get('.MuiTextField-root > label').contains('name').siblings().type('Jan')
         cy.get('.MuiTextField-root > label').contains('surname').siblings().type('Kowalski')
