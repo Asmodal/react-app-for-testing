@@ -11,34 +11,22 @@
 
 // This function is called when a project is opened or re-opened (e.g. due to
 // the project's config changing)
+const injectDevServer = require("@cypress/react/plugins/react-scripts")
 
 /**
  * @type {Cypress.PluginConfig}
  */
 // eslint-disable-next-line no-unused-vars
-module.exports = (on, config) => {
-  // `on` is used to hook into various events Cypress emits
-  // `config` is the resolved Cypress config
-}
 const {
   addMatchImageSnapshotPlugin,
 } = require('cypress-image-snapshot/plugin');
 
 module.exports = (on, config) => {
-  addMatchImageSnapshotPlugin(on, config);
-};
-module.exports = (on, config) => {
   require('@cypress/code-coverage/task')(on, config)
   // include any other plugin code...
-
+  addMatchImageSnapshotPlugin(on, config);
+  injectDevServer(on, config)
   // It's IMPORTANT to return the config object
   // with any changed environment variables
-  return config
-}
-
-const injectDevServer = require("@cypress/react/plugins/react-scripts")
-
-module.exports = (on, config) => {
-  injectDevServer(on, config)
   return config
 }
