@@ -1,6 +1,11 @@
 /* eslint-disable no-undef */
 /// <reference types="cypress" />
+const width = 1280;
+const height = 720;
 describe('UserAdd', () => {
+    before(()=> {
+        cy.viewport(width, height)
+    })
     beforeEach(() => {
         cy.visit('localhost:3000');
     })
